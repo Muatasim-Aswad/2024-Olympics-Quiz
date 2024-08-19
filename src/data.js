@@ -43,8 +43,7 @@ export const quizData = {
       links: [
         {
           text: 'Why did it go viral',
-          href:
-            'https://www.rnz.co.nz/news/olympics-2024/525210/what-is-the-olympic-chocolate-muffin-and-why-did-it-go-viral',
+          href: 'https://www.rnz.co.nz/news/olympics-2024/525210/what-is-the-olympic-chocolate-muffin-and-why-did-it-go-viral',
         },
       ],
     },
@@ -78,14 +77,12 @@ export const quizData = {
       links: [
         {
           text: 'National olympic committees',
-          href:
-            'https://olympics.com/ioc/faq/competing-and-being-part-of-the-games/how-many-athletes-and-countries-take-part-in-the-olympic-games',
+          href: 'https://olympics.com/ioc/faq/competing-and-being-part-of-the-games/how-many-athletes-and-countries-take-part-in-the-olympic-games',
         },
       ],
     },
     {
-      text:
-        'Which animal made an unexpected appearance at the Olympics this year?',
+      text: 'Which animal made an unexpected appearance at the Olympics this year?',
       answers: {
         a: 'Lion',
         b: 'Elephant',
@@ -97,14 +94,12 @@ export const quizData = {
       links: [
         {
           text: 'Surprise appearance during 2024 Paris Olympics',
-          href:
-            'https://www.cbsnews.com/news/whale-2024-paris-olympics-surfing-tahiti/',
+          href: 'https://www.cbsnews.com/news/whale-2024-paris-olympics-surfing-tahiti/',
         },
       ],
     },
     {
-      text:
-        'Which countries won their first-ever gold medal at the Olympics 2024?',
+      text: 'Which countries won their first-ever gold medal at the Olympics 2024?',
       answers: {
         a: 'Botswana, Dominica, Guatemala and Saint Lucia',
         b: 'Tunisia, Uzbekistan and Canada',
@@ -116,8 +111,7 @@ export const quizData = {
       links: [
         {
           text: ' Very first gold medal',
-          href:
-            'https://olympics.com/en/news/paris-2024-olympics-nations-won-first-ever-medal-at-the-games',
+          href: 'https://olympics.com/en/news/paris-2024-olympics-nations-won-first-ever-medal-at-the-games',
         },
       ],
     },
@@ -134,8 +128,7 @@ export const quizData = {
       links: [
         {
           text: 'Olympics',
-          href:
-            'https://olympics.com/en/news/leon-marchand-frenchman-between-winning-two-olympic-gold-medals',
+          href: 'https://olympics.com/en/news/leon-marchand-frenchman-between-winning-two-olympic-gold-medals',
         },
       ],
     },
@@ -169,8 +162,7 @@ export const quizData = {
       links: [
         {
           text: 'Sharpshooter wins silver medal',
-          href:
-            'https://www.nbcnews.com/news/sports/sharpshooter-yusuf-dikec-silver-olympics-minimal-gear-internet-sensati-rcna164685',
+          href: 'https://www.nbcnews.com/news/sports/sharpshooter-yusuf-dikec-silver-olympics-minimal-gear-internet-sensati-rcna164685',
         },
       ],
     },

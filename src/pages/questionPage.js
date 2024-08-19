@@ -10,12 +10,12 @@ import { quizData } from '../data.js';
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-  
+
   const currentQuestionIndex = quizData.currentQuestionIndex;
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   //to give the number for questions
-  
+
   const questionNumber = currentQuestionIndex + 1;
   const questionTextWithNumber = `${questionNumber}. ${currentQuestion.text}`;
 
