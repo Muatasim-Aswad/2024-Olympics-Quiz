@@ -18,7 +18,7 @@ ul {
 }
 
 body {
-  background-image: url('https://img.olympics.com/images/image/private/t_social_share_thumb/f_auto/primary/vc4ucoz6rs96naqnk3jb');
+  background-image: url('/public/img/example-image.jpg') ;
   background-repeat: no-repeat;
   background-size: cover; 
 }
