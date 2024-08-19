@@ -18,15 +18,15 @@ ul {
 }
 
 body {
-  background-image: url('/public/img/example-image.jpg') ;
+  background-image: url('/public/img/example-image.jpg');
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
 
 #user-interface {
   background-color: rgba(191, 175, 57, 0.766);
   width: 50%;
-  height: 50%; 
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@ li {
   transition: background-color 0.3 ease;
 }
 li:hover {
-  background-color:#d87a9ce7;
+  background-color: #d87a9ce7;
 }
 
 #next-question-button {
@@ -82,7 +82,7 @@ li:hover {
   font-style: italic;
   border-radius: 13px;
   border-style: hidden;
-  background-color:  #cd658be7;
+  background-color: #cd658be7;
 }
 #next-question-button:hover {
   background-color: #da316fe7;
