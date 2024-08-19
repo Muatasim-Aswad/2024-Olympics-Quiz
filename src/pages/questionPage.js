@@ -5,12 +5,14 @@ import {
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { createScoreElement } from '../views/scoreView.js';
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
+  //add question and answers
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
@@ -24,6 +26,7 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  //buttons logic
   const answerButtons = answersListElement.querySelectorAll('button');
 
   const correctAnswerButton = document.querySelector(
@@ -41,6 +44,12 @@ export const initQuestionPage = () => {
     );
   });
 
+  //score
+  const [solvedQuestions, correctOnes] = countScore();
+  const scoreElement = createScoreElement(solvedQuestions, correctOnes);
+  userInterface.appendChild(scoreElement);
+
+  //next
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
@@ -69,4 +78,18 @@ const handleAnswer = (
   clickedButton.classList.add(styling);
 
   if (!result) correctAnswerButton.classList.add('correct-answer');
+};
+
+const countScore = () => {
+  let solved = 0;
+  let correct = 0;
+
+  quizData.questions.forEach((question) => {
+    if (question.selected) {
+      solved++;
+      if (question.selected === question.correct) correct++;
+    }
+  });
+
+  return [solved, correct];
 };
