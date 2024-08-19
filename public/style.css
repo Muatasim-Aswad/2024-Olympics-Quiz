@@ -25,8 +25,8 @@ body {
 
 #user-interface {
   background-color: rgba(191, 175, 57, 0.766);
-  width: 50%;
-  height: 50%;
+  width: 70%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,10 +50,12 @@ body {
 #answers-list {
   flex-wrap: wrap;
   justify-content: space-between;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 900px;
   margin: 0 auto;
-  width: 90%;
-  padding: 15px;
+  padding: 40px;
   margin-bottom: 10px;
 }
 
@@ -64,10 +66,12 @@ li {
   text-align: center;
   position: relative;
   cursor: pointer;
-  margin: 15px;
-  padding: 20px;
+  margin: 10px;
+  padding: 15px;
   background-color: #efeeda;
   transition: background-color 0.3 ease;
+  justify-content: left;
+  display: flex;
 }
 li:hover {
   background-color: #d87a9ce7;
