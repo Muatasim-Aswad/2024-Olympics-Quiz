@@ -10,10 +10,16 @@ import { quizData } from '../data.js';
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-
+  
+  const currentQuestionIndex = quizData.currentQuestionIndex;
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const questionElement = createQuestionElement(currentQuestion.text);
+  //to give the number for questions
+  
+  const questionNumber = currentQuestionIndex + 1;
+  const questionTextWithNumber = `${questionNumber}. ${currentQuestion.text}`;
+
+  const questionElement = createQuestionElement(questionTextWithNumber);
 
   userInterface.appendChild(questionElement);
 
