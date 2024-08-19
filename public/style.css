@@ -87,3 +87,11 @@ li:hover {
 #next-question-button:hover {
   background-color: #da316fe7;
 }
+
+.correct-answer {
+  color: green;
+}
+
+.wrong-answer {
+  color: red;
+}
