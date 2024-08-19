@@ -23,20 +23,20 @@ body {
   background-size: cover;
 }
 h2 {
-  font-size: 50px;
-  margin-bottom: 40px;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
-.welcomeTitle {
-  font-size: 80px;
-  margin-top: 10px;
+.welcome-title {
+  font-size: 5rem;
+  margin-top: 0.7rem;
 }
 
-#input {
-  margin-bottom: 40px;
+#welcome-page-name-input{
+  margin-bottom: 2rem;
   width: 80%;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 1.2rem
 }
 
 #user-interface {
@@ -47,7 +47,7 @@ h2 {
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  font-size: 17px;
+  font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 #start-quiz-button {
@@ -71,8 +71,8 @@ h2 {
   gap: 10px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px;
-  margin-bottom: 10px;
+  padding: 2rem;
+  margin-bottom: 0.8rem;
 }
 
 li {
@@ -82,8 +82,8 @@ li {
   text-align: center;
   position: relative;
   cursor: pointer;
-  margin: 10px;
-  padding: 15px;
+  margin: 0.7rem;
+  padding: 1rem;
   background-color: #efeeda;
   transition: background-color 0.3 ease;
   justify-content: left;
