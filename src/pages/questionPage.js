@@ -13,9 +13,13 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   //add question and answers
+  const currentQuestionIndex = quizData.currentQuestionIndex;
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const questionElement = createQuestionElement(currentQuestion.text);
+  const questionNumber = currentQuestionIndex + 1;
+  const questionTextWithNumber = `${questionNumber}. ${currentQuestion.text}`;
+
+  const questionElement = createQuestionElement(questionTextWithNumber);
 
   userInterface.appendChild(questionElement);
 
