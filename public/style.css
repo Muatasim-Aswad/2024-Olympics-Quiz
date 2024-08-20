@@ -59,7 +59,8 @@ body {
   margin-bottom: 10px;
 }
 
-li {
+button {
+  width: 100%;
   border: 2px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
@@ -73,8 +74,14 @@ li {
   justify-content: left;
   display: flex;
 }
-li:hover {
+
+button:hover {
   background-color: #d87a9ce7;
+}
+
+button > span {
+  text-transform: uppercase;
+  padding-right: 0.5rem;
 }
 
 #next-question-button {
@@ -93,9 +100,12 @@ li:hover {
 }
 
 .correct-answer {
-  color: green;
+  background-color: rgb(175, 234, 175);
+  color: black;
+  font-weight: 600;
 }
 
 .wrong-answer {
-  color: red;
+  background-color: #d87a9ce7;
+  color: black;
 }
