@@ -14,6 +14,6 @@ export const initWelcomePage = () => {
     .addEventListener('click', startQuiz);
 };
 
-const startQuiz = () => {
+ export const startQuiz = () => {
   initQuestionPage();
 };
