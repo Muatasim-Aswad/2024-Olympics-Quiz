@@ -10,3 +10,4 @@ export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const SCORE_ID = 'score';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
+export const INPUT_NAME_ID = 'welcome-page-name-input';

@@ -22,6 +22,22 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.welcome-title {
+  font-size: 5rem;
+  margin-top: 0.7rem;
+}
+
+#welcome-page-name-input {
+  margin-bottom: 2rem;
+  width: 80%;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
 
 #user-interface {
   background-color: rgba(191, 175, 57, 0.766);
@@ -31,7 +47,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  font-size: 17px;
+  font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 #start-quiz-button {
@@ -55,8 +71,8 @@ body {
   gap: 10px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px;
-  margin-bottom: 10px;
+  padding: 2rem;
+  margin-bottom: 0.8rem;
 }
 
 li {
@@ -66,8 +82,8 @@ li {
   text-align: center;
   position: relative;
   cursor: pointer;
-  margin: 10px;
-  padding: 15px;
+  margin: 0.7rem;
+  padding: 1rem;
   background-color: #efeeda;
   transition: background-color 0.3 ease;
   justify-content: left;

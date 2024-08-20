@@ -10,6 +10,7 @@
 */
 
 export const quizData = {
+  playerName: '',
   currentQuestionIndex: 0,
   // the questions in the quiz
   questions: [
