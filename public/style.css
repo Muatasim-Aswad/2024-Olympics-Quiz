@@ -59,7 +59,7 @@ body {
   margin-bottom: 10px;
 }
 
-button {
+#answers-list button {
   width: 100%;
   border: 2px solid #ccc;
   border-radius: 8px;
@@ -75,11 +75,11 @@ button {
   display: flex;
 }
 
-button:hover {
+#answers-list button:hover {
   background-color: #d87a9ce7;
 }
 
-button > span {
+#answers-list button > span {
   text-transform: uppercase;
   padding-right: 0.5rem;
 }
