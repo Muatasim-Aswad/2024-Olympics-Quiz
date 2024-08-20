@@ -142,7 +142,7 @@ li {
   font-weight: 600;
 }
 
-li .wrong-answer {
+#answers-list .wrong-answer {
   background-color: red;
   color: black;
 }
