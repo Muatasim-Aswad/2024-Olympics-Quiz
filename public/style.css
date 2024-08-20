@@ -99,13 +99,13 @@ body {
   background-color: #da316fe7;
 }
 
-.correct-answer {
+#answers-list .correct-answer {
   background-color: rgb(175, 234, 175);
   color: black;
   font-weight: 600;
 }
 
-.wrong-answer {
+#answers-list .wrong-answer {
   background-color: #d87a9ce7;
   color: black;
 }
