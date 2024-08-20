@@ -9,6 +9,6 @@ export const USER_INTERFACE_ID = 'user-interface';
 export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const SCORE_ID = 'score';
-export const REMAINING_Questions_ID = 'remaining';
+export const REMAINING_QUESTIONS_ID = 'remaining';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const INPUT_NAME_ID = 'welcome-page-name-input';
