@@ -35,6 +35,7 @@ h2 {
 h1 {
   position: relative;
   z-index: 10;
+  top: 50px;
 }
 
 .welcome-title {
@@ -71,6 +72,7 @@ h1,
   box-sizing: border-box;
   padding: 10px;
   margin: 10px 0;
+  bottom: 20px;
 }
 
 #start-quiz-button {
@@ -157,7 +159,7 @@ li {
   padding: 0.8rem;
   font-weight: bold;
   position: fixed;
-  top: 10px;
+  top: 0.1rem;
   right: 20px;
   z-index: 5;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -168,7 +170,7 @@ li {
   top: 10px;
   left: 20px;
 }
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   #answers-list {
     flex-direction: column;
   }
@@ -210,5 +212,24 @@ li {
   }
   #remaining {
     font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 990px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  button {
+    font-size: 0.8rem;
+  }
+  #next-question-button {
+    font-size: 0.7rem;
+    bottom: 2rem;
+  }
+  #score {
+    font-size: 0.8rem;
+  }
+  #remaining {
+    font-size: 0.8rem;
   }
 }
