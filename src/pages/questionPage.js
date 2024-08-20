@@ -6,6 +6,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { createScoreElement } from '../views/scoreView.js';
+import { createRemainingElement } from '../views/remainingQuestionsView.js';
 import { quizData } from '../data.js';
 import { initEndPage } from './endPage.js';
 
@@ -54,6 +55,13 @@ export const initQuestionPage = () => {
   const [solvedQuestions, correctOnes] = countScore();
   const scoreElement = createScoreElement(solvedQuestions, correctOnes);
   userInterface.appendChild(scoreElement);
+
+  //remaining questions number
+  const totalQuestions = quizData.questions.length;
+  const remainingQuestions = totalQuestions - solvedQuestions;
+
+  const remainingElement = createRemainingElement(remainingQuestions);
+  userInterface.appendChild(remainingElement);
 
   //next
   document

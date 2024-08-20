@@ -75,7 +75,8 @@ h2 {
   margin-bottom: 0.8rem;
 }
 
-li {
+#answers-list button {
+  width: 100%;
   border: 2px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
@@ -89,8 +90,14 @@ li {
   justify-content: left;
   display: flex;
 }
-li:hover {
+
+#answers-list button:hover {
   background-color: #d87a9ce7;
+}
+
+#answers-list button > span {
+  text-transform: uppercase;
+  padding-right: 0.5rem;
 }
 
 #next-question-button {
@@ -108,12 +115,15 @@ li:hover {
   background-color: #da316fe7;
 }
 
-.correct-answer {
-  color: green;
+#answers-list .correct-answer {
+  background-color: rgb(175, 234, 175);
+  color: black;
+  font-weight: 600;
 }
 
-.wrong-answer {
-  color: red;
+#answers-list .wrong-answer {
+  background-color: #d87a9ce7;
+  color: black;
 }
 #score {
   font-size: 2rem;
