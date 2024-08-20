@@ -35,7 +35,6 @@ h2 {
 h1 {
   position: relative;
   z-index: 10;
-
 }
 
 .welcome-title {
@@ -66,13 +65,13 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1, #next-question-button {
+h1,
+#next-question-button {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
   margin: 10px 0;
 }
-
 
 #start-quiz-button {
   width: 8rem;
@@ -167,7 +166,7 @@ li:hover {
     right: 10px;
     margin-bottom: 20rem;
   }
- 
+
   h2 {
     font-size: 2rem;
   }
@@ -184,7 +183,8 @@ li:hover {
     width: 95%;
     padding: 10px;
   }
-  h1, #next-question-button{
+  h1,
+  #next-question-button {
     font-size: 1rem;
   }
 }
