@@ -1,4 +1,5 @@
 import { START_QUIZ_BUTTON_ID, INPUT_NAME_ID } from '../constants.js';
+import { quizData } from '../data.js';
 
 /**
  * Create the welcome screen
@@ -12,5 +13,10 @@ export const createWelcomeElement = () => {
     <input id="${INPUT_NAME_ID}" type="text"  name="name" placeholder="Enter your name" required>
     <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
   `;
+  
+  element.querySelector(`#${START_QUIZ_BUTTON_ID}`).addEventListener('click', () => {
+  const playerName = element.querySelector(`#${INPUT_NAME_ID}`).value;
+  quizData.playerName = playerName;
+});
   return element;
 };
