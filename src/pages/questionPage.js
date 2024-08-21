@@ -7,6 +7,7 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { createScoreElement } from '../views/scoreView.js';
 import { createRemainingElement } from '../views/remainingQuestionsView.js';
+import { createTimerElement } from '../views/timerView.js';
 import { quizData } from '../data.js';
 import { initEndPage } from './endPage.js';
 
@@ -49,6 +50,12 @@ export const initQuestionPage = () => {
       )
     );
   });
+
+  //timer
+  const seconds = 10;
+  const timerElement = createTimerElement(formatter(seconds));
+  userInterface.appendChild(timerElement);
+  timer(seconds, timerElement);
 
   //score
   const [solvedQuestions, correctOnes] = countScore();
@@ -111,4 +118,28 @@ export const countScore = () => {
   });
 
   return [solved, correct];
+};
+
+const timer = (seconds, timerElement) => {
+  let finished;
+  const timer = setInterval(() => {
+    seconds--; //count down
+    timerElement.innerText = formatter(seconds); //update view
+
+    finished = seconds === 0; //end
+    if (finished) {
+      clearInterval(timer);
+      nextQuestion();
+    }
+  }, 1000);
+};
+
+//turn seconds into mm:ss format
+const formatter = (totalSeconds) => {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  const format00 = (number) => String(number).padStart(2, '0');
+
+  return `${format00(minutes)}:${format00(seconds)}`;
 };
