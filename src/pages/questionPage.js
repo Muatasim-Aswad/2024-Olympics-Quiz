@@ -69,9 +69,15 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
+    // load end page  after one and a half seconds
+    setTimeout(initEndPage, 1500);
+  } else {
+    // If it's not the last question, move to the next question immediately
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  initQuestionPage();
+    initQuestionPage();
+  }
 };
 
 const handleAnswer = (
@@ -91,14 +97,6 @@ const handleAnswer = (
   clickedButton.classList.add(styling);
 
   if (!result) correctAnswerButton.classList.add('correct-answer');
-
-  if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
-    // load end page  after one and a half seconds
-    setTimeout(initEndPage, 1500);
-  } else {
-    // If it's not the last question, move to the next question immediately
-    nextQuestion();
-  }
 };
 
 export const countScore = () => {
