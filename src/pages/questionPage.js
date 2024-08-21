@@ -52,19 +52,19 @@ export const initQuestionPage = () => {
   });
 
   //timer
-  const seconds = 10;
+  const seconds = 30;
   const timerElement = createTimerElement(formatter(seconds));
   userInterface.appendChild(timerElement);
   timer(seconds, timerElement);
 
   //score
-  const [solvedQuestions, correctOnes] = countScore();
-  const scoreElement = createScoreElement(solvedQuestions, correctOnes);
+  const [expiredQuestions, correctOnes] = countScore();
+  const scoreElement = createScoreElement(expiredQuestions, correctOnes);
   userInterface.appendChild(scoreElement);
 
   //remaining questions number
   const totalQuestions = quizData.questions.length;
-  const remainingQuestions = totalQuestions - solvedQuestions;
+  const remainingQuestions = totalQuestions - expiredQuestions;
 
   const remainingElement = createRemainingElement(remainingQuestions);
   userInterface.appendChild(remainingElement);
@@ -107,17 +107,16 @@ const handleAnswer = (
 };
 
 export const countScore = () => {
-  let solved = 0;
+  const expired = quizData.currentQuestionIndex;
   let correct = 0;
 
   quizData.questions.forEach((question) => {
     if (question.selected) {
-      solved++;
       if (question.selected === question.correct) correct++;
     }
   });
 
-  return [solved, correct];
+  return [expired, correct];
 };
 
 const timer = (seconds, timerElement) => {
