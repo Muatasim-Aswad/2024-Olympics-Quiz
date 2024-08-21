@@ -12,7 +12,22 @@ export const initEndPage = () => {
   const scoreView = countScore();
   const totalScore = scoreView[1]; // the index based on countScore function return value
 
-  const endPageElement = createEndScreen(quizData.playerName, totalScore);
+  
+    const gifElement= document.getElementById('gif');
+    let gifSrc = ''
+    if(totalScore <= 4){
+      gifSrc='../public/img/fail-run.gif'
+    }
+    else if (totalScore >= 5 && totalScore <= 9){
+      gifSrc='../public/img/almost-there.gif'
+    }
+    else if (totalScore === 10){
+     gifSrc='../public/img/medals-show-off.gif'
+    }
+  
+
+   
+  const endPageElement = createEndScreen(quizData.playerName, totalScore, gifSrc);
   userInterface.appendChild(endPageElement);
 
   const restartQuiz = () => {
