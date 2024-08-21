@@ -8,6 +8,7 @@ import { createAnswerElement } from '../views/answerView.js';
 import { createScoreElement } from '../views/scoreView.js';
 import { createRemainingElement } from '../views/remainingQuestionsView.js';
 import { quizData } from '../data.js';
+import { initEndPage } from './endPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -68,9 +69,15 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
+    // load end page  after one and a half seconds
+    setTimeout(initEndPage, 1500);
+  } else {
+    // If it's not the last question, move to the next question immediately
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  initQuestionPage();
+    initQuestionPage();
+  }
 };
 
 const handleAnswer = (
@@ -92,7 +99,7 @@ const handleAnswer = (
   if (!result) correctAnswerButton.classList.add('correct-answer');
 };
 
-const countScore = () => {
+export const countScore = () => {
   let solved = 0;
   let correct = 0;
 
