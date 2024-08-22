@@ -80,6 +80,9 @@ const nextQuestion = () => {
 
   if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
     // load end page  after one and a half seconds
+    const [, score] = countScore();
+    quizData.updateHighScores(score);
+
     setTimeout(initEndPage, 1500);
   } else {
     // If it's not the last question, move to the next question immediately

@@ -5,6 +5,7 @@ import { quizData } from '../data.js';
 import { countScore } from './questionPage.js';
 import { initQuestionPage } from './questionPage.js';
 import { RESTART_BUTTON } from '../constants.js';
+import { createHighScoreElement } from '../views/highScoreView.js';
 
 export const initEndPage = () => {
   const userInterface = document.getElementById(`${USER_INTERFACE_ID}`);
@@ -29,6 +30,10 @@ export const initEndPage = () => {
     gifSrc
   );
   userInterface.appendChild(endPageElement);
+
+  const [highestScore] = quizData.highScores;
+  const highScoreElement = createHighScoreElement(highestScore);
+  userInterface.appendChild(highScoreElement);
 
   const restartQuiz = () => {
     quizData.currentQuestionIndex = 0;

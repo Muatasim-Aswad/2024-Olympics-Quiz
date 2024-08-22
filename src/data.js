@@ -1,3 +1,4 @@
+import { HIGH_SCORES } from './constants.js';
 /* Program Data
 
   in this file you can declare variables to store important data for your program
@@ -10,6 +11,40 @@
 */
 
 export const quizData = {
+  get highScores() {
+    const jsonStr = localStorage.getItem(HIGH_SCORES);
+    return jsonStr === null ? [] : JSON.parse(jsonStr); //[] for initializing
+  },
+  set highScores(highScores) {
+    try {
+      if (!Array.isArray(highScores))
+        throw new TypeError('Failed to store data. Expected an array.');
+
+      const jsonStr = JSON.stringify(highScores);
+      localStorage.setItem(HIGH_SCORES, jsonStr);
+    } catch (error) {
+      console.error(error.message);
+    }
+  },
+  updateHighScores(score = 0) {
+    if (typeof score !== 'number') {
+      console.error('Failed to update high scores. Score must be a number.');
+      return;
+    } //validate
+
+    const scores = this.highScores; //get
+    scores.push(score); //add new score
+    scores.sort((a, b) => b - a); //re-sort descending
+
+    const maxScores = 3;
+    if (scores.length > maxScores) scores.length = maxScores; //trim the list
+    this.highScores = scores; //set
+
+    return (
+      this.highScores.length === scores.length &&
+      scores.every((score, index) => score === this.highScores[index])
+    ); //check
+  },
   playerName: '',
   currentQuestionIndex: 0,
   // the questions in the quiz
