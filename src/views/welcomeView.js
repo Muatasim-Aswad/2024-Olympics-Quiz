@@ -14,11 +14,17 @@ export const createWelcomeElement = () => {
     <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
   `;
 
+  const startButton = element.querySelector(`#${START_QUIZ_BUTTON_ID}`);
+  startButton.addEventListener('click', () => {
+    const playerName = element.querySelector(`#${INPUT_NAME_ID}`).value;
+    quizData.playerName = playerName;
+  });
   element
-    .querySelector(`#${START_QUIZ_BUTTON_ID}`)
-    .addEventListener('click', () => {
-      const playerName = element.querySelector(`#${INPUT_NAME_ID}`).value;
-      quizData.playerName = playerName;
+    .querySelector(`#${INPUT_NAME_ID}`)
+    .addEventListener('keyup', (event) => {
+      if (event.code === 'Enter') {
+        startButton.click();
+      }
     });
   return element;
 };

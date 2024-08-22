@@ -26,6 +26,11 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -35,6 +40,7 @@ h2 {
 h1 {
   position: relative;
   z-index: 10;
+  top: 50px;
 }
 
 .welcome-title {
@@ -52,7 +58,7 @@ h1 {
 #user-interface {
   background-color: rgba(191, 175, 57, 0.766);
   width: 70%;
-  height: 60%;
+  max-height: 80vh;
   display: grid;
   flex-direction: column;
   align-items: center;
@@ -62,6 +68,7 @@ h1 {
   box-sizing: border-box;
   overflow: hidden;
   font-size: 1rem;
+  overflow-y: auto;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -71,6 +78,7 @@ h1,
   box-sizing: border-box;
   padding: 10px;
   margin: 10px 0;
+  bottom: 20px;
 }
 
 #start-quiz-button {
@@ -92,25 +100,34 @@ h1,
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
-  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-bottom: 0.8rem;
+}
+button {
+  border: 2px solid #ccc;
+  border-radius: 8px;
   box-sizing: border-box;
+  font-size: 1rem;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 li {
   flex: 1 1 48%;
-  max-width: 60%;
   margin: 0.5rem;
-  padding: 1rem;
-  background-color: #efeeda;
-  position: relative;
-  cursor: pointer;
-  border-radius: 8px;
-  justify-content: left;
+  padding: 0.5rem;
   display: flex;
   transition: background-color 0.3s ease;
 }
-li:hover {
-  background-color: #d87a9ce7;
+
+#answers-list button > span {
+  text-transform: uppercase;
+  padding-right: 0.5rem;
 }
 
 #next-question-button {
@@ -128,15 +145,18 @@ li:hover {
   background-color: #da316fe7;
 }
 
-.correct-answer {
-  color: green;
+#answers-list .correct-answer {
+  background-color: rgb(10, 156, 10);
+  color: black;
+  font-weight: 600;
 }
 
-.wrong-answer {
-  color: red;
+#answers-list .wrong-answer {
+  background-color: red;
+  color: black;
 }
 #score {
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-bottom: 35rem;
   border: 2px solid #0e0e0e;
   border-radius: 5px;
@@ -146,13 +166,53 @@ li:hover {
   padding: 0.8rem;
   font-weight: bold;
   position: fixed;
-  top: 10px;
+  top: 0.1rem;
   right: 20px;
   z-index: 5;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
+#remaining {
+  font-weight: bold;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+}
 
-@media (max-width: 600px) {
+#scoreFeedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scoreView {
+  font-weight: 700;
+}
+
+#feedbackText {
+  color: black;
+  align-self: center;
+  justify-self: start;
+  font-size: medium;
+}
+
+#gif {
+  max-width: 100%;
+  max-height: 250px;
+}
+
+#restart-button {
+  align-self: center;
+  width: 120px;
+  height: 50px;
+  background-color: #cd658be7;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 20px;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+@media (max-width: 680px) {
   #answers-list {
     flex-direction: column;
   }
@@ -160,8 +220,11 @@ li:hover {
     flex: 1 1 auto;
     margin: 0.5rem 0;
   }
+  button {
+    font-size: 0.8rem;
+  }
   #score {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     top: 10px;
     right: 10px;
     margin-bottom: 20rem;
@@ -175,6 +238,7 @@ li:hover {
   }
   h1 {
     font-size: 1rem;
+    top: 40px;
   }
   .welcome-title {
     font-size: 3rem;
@@ -185,6 +249,29 @@ li:hover {
   }
   h1,
   #next-question-button {
-    font-size: 1rem;
+    font-size: 0.7rem;
+    bottom: 1rem;
+  }
+  #remaining {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 990px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  button {
+    font-size: 0.8rem;
+  }
+  #next-question-button {
+    font-size: 0.7rem;
+    bottom: 2rem;
+  }
+  #score {
+    font-size: 0.8rem;
+  }
+  #remaining {
+    font-size: 0.8rem;
   }
 }
