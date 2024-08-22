@@ -52,19 +52,19 @@ export const initQuestionPage = () => {
   });
 
   //timer
-  const seconds = 30;
+  const seconds = 5;
   const timerElement = createTimerElement(formatter(seconds));
   userInterface.appendChild(timerElement);
   timer(seconds, timerElement);
 
   //score
-  const [expiredQuestions, correctOnes] = countScore();
-  const scoreElement = createScoreElement(expiredQuestions, correctOnes);
+  const [completedQuestions, correctOnes] = countScore();
+  const scoreElement = createScoreElement(completedQuestions, correctOnes);
   userInterface.appendChild(scoreElement);
 
   //remaining questions number
   const totalQuestions = quizData.questions.length;
-  const remainingQuestions = totalQuestions - expiredQuestions;
+  const remainingQuestions = totalQuestions - completedQuestions;
 
   const remainingElement = createRemainingElement(remainingQuestions);
   userInterface.appendChild(remainingElement);
@@ -76,6 +76,8 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
+  clearInterval(window.timerId);
+
   if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
     // load end page  after one and a half seconds
     setTimeout(initEndPage, 1500);
@@ -107,7 +109,7 @@ const handleAnswer = (
 };
 
 export const countScore = () => {
-  const expired = quizData.currentQuestionIndex;
+  const completedQuestions = quizData.currentQuestionIndex;
   let correct = 0;
 
   quizData.questions.forEach((question) => {
@@ -116,18 +118,18 @@ export const countScore = () => {
     }
   });
 
-  return [expired, correct];
+  return [completedQuestions, correct];
 };
 
 const timer = (seconds, timerElement) => {
   let finished;
-  const timer = setInterval(() => {
+
+  window.timerId = setInterval(() => {
     seconds--; //count down
     timerElement.innerText = formatter(seconds); //update view
 
     finished = seconds === 0; //end
     if (finished) {
-      clearInterval(timer);
       nextQuestion();
     }
   }, 1000);
