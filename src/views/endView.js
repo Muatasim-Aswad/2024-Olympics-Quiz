@@ -1,4 +1,4 @@
-import { START_QUIZ_BUTTON_ID } from '../constants.js';
+import { RESTART_BUTTON, START_QUIZ_BUTTON_ID } from '../constants.js';
 
 export const createEndScreen = (playerName, totalScore, gifs) => {
   const element = document.createElement('div');
@@ -20,7 +20,7 @@ export const createEndScreen = (playerName, totalScore, gifs) => {
 
   const RestartButton = document.createElement('button');
   //RestartButton.id = `${START_QUIZ_BUTTON_ID}`;
-  RestartButton.id = 'restartButton';
+  RestartButton.id = `${RESTART_BUTTON}`;
   RestartButton.textContent = 'Restart quiz';
   element.appendChild(RestartButton);
 

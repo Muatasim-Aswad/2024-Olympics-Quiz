@@ -12,3 +12,4 @@ export const SCORE_ID = 'score';
 export const REMAINING_QUESTIONS_ID = 'remaining';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const INPUT_NAME_ID = 'welcome-page-name-input';
+export const RESTART_BUTTON = 'restartButton';
