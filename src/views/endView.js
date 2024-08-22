@@ -6,15 +6,15 @@ export const createEndScreen = (playerName, totalScore,gifs) => {
  
   if (totalScore <= 4) {
     element.innerHTML = `<p id = 'scoreView'>Your total score: ${totalScore}/10 </p>
-    <h1 id= 'feedbackText'> You can do better ${playerName}. Try again and beat your score!</h1>
+    <h2 id= 'feedbackText'> You can do better ${playerName}. Try again and beat your score!</h2>
     <img id='gif' src='${gifs}'>`;
   } else if (totalScore >= 5 && totalScore <= 9) {
     element.innerHTML = `<p id = 'scoreView'>Your total score: ${totalScore}/10 </p>
-    <h1 id= 'feedbackText'>Good job ${playerName}! You scored well. Keep pushing for that high score!</h1>
+    <h2 id= 'feedbackText'>Good job ${playerName}! You scored well. Keep pushing for that high score!</h2>
     <img id='gif' src='${gifs}'>`;
   } else if (totalScore >= 10) {
     element.innerHTML = `<p id = 'scoreView'>Your total score: ${totalScore}/10 </p>
-    <h1 id= 'feedbackText'>Congratulations ${playerName}! You're a true champion!</h1>
+    <h2 id= 'feedbackText'>Congratulations ${playerName}! You're a true champion!</h2>
     <img id='gif' src='${gifs}'>`;
   }
 

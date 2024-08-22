@@ -41,6 +41,6 @@ export const initEndPage = () => {
   };
 
   document
-    .getElementById(`${START_QUIZ_BUTTON_ID}`)
+    .getElementById(`restartButton`)
     .addEventListener('click', restartQuiz);
 };
