@@ -76,7 +76,7 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  clearInterval(window.timerId);
+  clearInterval(timerInterval);
 
   if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
     // load end page  after one and a half seconds
@@ -121,10 +121,12 @@ export const countScore = () => {
   return [completedQuestions, correct];
 };
 
+let timerInterval;
 const timer = (seconds, timerElement) => {
   let finished;
 
-  window.timerId = setInterval(() => {
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
     seconds--; //count down
     timerElement.innerText = formatter(seconds); //update view
 
