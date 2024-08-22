@@ -42,7 +42,7 @@ export const initQuestionPage = () => {
   answerButtons.forEach((answerButton) => {
     answerButton.addEventListener('click', (event) =>
       handleAnswer(
-        event.target,
+        event.currentTarget,
         currentQuestion,
         answerButtons,
         correctAnswerButton
