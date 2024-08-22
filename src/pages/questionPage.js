@@ -7,6 +7,7 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { createScoreElement } from '../views/scoreView.js';
 import { createRemainingElement } from '../views/remainingQuestionsView.js';
+import { createTimerElement } from '../views/timerView.js';
 import { quizData } from '../data.js';
 import { initEndPage } from './endPage.js';
 
@@ -50,14 +51,20 @@ export const initQuestionPage = () => {
     );
   });
 
+  //timer
+  const seconds = 5;
+  const timerElement = createTimerElement(formatter(seconds));
+  userInterface.appendChild(timerElement);
+  timer(seconds, timerElement);
+
   //score
-  const [solvedQuestions, correctOnes] = countScore();
-  const scoreElement = createScoreElement(solvedQuestions, correctOnes);
+  const [completedQuestions, correctOnes] = countScore();
+  const scoreElement = createScoreElement(completedQuestions, correctOnes);
   userInterface.appendChild(scoreElement);
 
   //remaining questions number
   const totalQuestions = quizData.questions.length;
-  const remainingQuestions = totalQuestions - solvedQuestions;
+  const remainingQuestions = totalQuestions - completedQuestions;
 
   const remainingElement = createRemainingElement(remainingQuestions);
   userInterface.appendChild(remainingElement);
@@ -69,6 +76,8 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
+  clearInterval(timerInterval);
+
   if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
     // load end page  after one and a half seconds
     setTimeout(initEndPage, 1500);
@@ -100,15 +109,40 @@ const handleAnswer = (
 };
 
 export const countScore = () => {
-  let solved = 0;
+  const completedQuestions = quizData.currentQuestionIndex;
   let correct = 0;
 
   quizData.questions.forEach((question) => {
     if (question.selected) {
-      solved++;
       if (question.selected === question.correct) correct++;
     }
   });
 
-  return [solved, correct];
+  return [completedQuestions, correct];
+};
+
+let timerInterval;
+const timer = (seconds, timerElement) => {
+  let finished;
+
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    seconds--; //count down
+    timerElement.innerText = formatter(seconds); //update view
+
+    finished = seconds === 0; //end
+    if (finished) {
+      nextQuestion();
+    }
+  }, 1000);
+};
+
+//turn seconds into mm:ss format
+const formatter = (totalSeconds) => {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  const format00 = (number) => String(number).padStart(2, '0');
+
+  return `${format00(minutes)}:${format00(seconds)}`;
 };
