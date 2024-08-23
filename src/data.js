@@ -13,7 +13,7 @@ export const quizData = {
   playerName: '',
   _speed: 6,
   set speed(speed) {
-    if (typeof speed === 'number' && speed > 0 && speed < 13)
+    if (typeof speed === 'number' && speed > -1 && speed < 12)
       this._speed = speed;
   },
   get speed() {

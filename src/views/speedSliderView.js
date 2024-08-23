@@ -12,7 +12,7 @@ export const createSpeedElement = (speed) => {
   element.innerHTML = String.raw`
 
     <span class="slider-label">Slow</span>
-    <input type="range" min="1" max="12" step="1" id="${SPEED_SLIDER_ID}" value="${speed}">
+    <input type="range" min="0" max="11" step="1" id="${SPEED_SLIDER_ID}" value="${speed}">
     <span class="slider-label">Fast</span>
     <p id="${SPEED_VIEW}">x${speed}</p>
   `;
