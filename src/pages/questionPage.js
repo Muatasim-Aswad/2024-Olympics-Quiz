@@ -1,6 +1,7 @@
 import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
+  TIMER_AUDIO,
   USER_INTERFACE_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
@@ -49,6 +50,17 @@ export const initQuestionPage = () => {
       )
     );
   });
+
+  // timer audio
+  const timerSoundEffect = document.getElementById(`${TIMER_AUDIO}`);
+  timerSoundEffect.src = '../public/audio/ticking-sound.mp3';
+
+  const playAudio = () => {
+    timerSoundEffect.currentTime = 0; // Reset to start
+    timerSoundEffect.play();
+  };
+
+  playAudio();
 
   //timer
   const seconds = 120;

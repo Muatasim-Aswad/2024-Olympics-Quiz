@@ -1,4 +1,8 @@
-import { ANSWERS_LIST_ID, NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import {
+  ANSWERS_LIST_ID,
+  TIMER_AUDIO,
+  NEXT_QUESTION_BUTTON_ID,
+} from '../constants.js';
 
 /**
  * Create a full question element
@@ -11,6 +15,8 @@ export const createQuestionElement = (question) => {
   element.innerHTML = String.raw`
     <h1>${question}</h1>
 
+    <audio id ="${TIMER_AUDIO}"></audio>
+    
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
 
