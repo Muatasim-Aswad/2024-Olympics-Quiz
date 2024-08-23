@@ -1,4 +1,3 @@
-import { is } from './utilities/is.js';
 /* Program Data
 
   in this file you can declare variables to store important data for your program
@@ -189,17 +188,6 @@ export const quizData = {
 };
 
 export const updateHighScores = (score = 0, scoresArray = []) => {
-  const isValidInput =
-    is(score, 'number', scoresArray, 'array') &&
-    scoresArray.every((score) => is(score, 'number'));
-
-  if (!isValidInput) {
-    console.error(
-      'Failed to update high scores. Score must be a number. scoresArray must be an array of numbers'
-    );
-    return;
-  } //validate
-
   const scores = [...scoresArray]; //copy
   scores.push(score); //add new score
   scores.sort((a, b) => b - a); //re-sort descending
