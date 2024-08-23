@@ -1,5 +1,9 @@
 import { createEndScreen } from '../views/endView.js';
-import { USER_INTERFACE_ID, RESTART_BUTTON, START_QUIZ_BUTTON_ID  } from '../constants.js';
+import {
+  USER_INTERFACE_ID,
+  RESTART_BUTTON,
+  START_QUIZ_BUTTON_ID,
+} from '../constants.js';
 import { quizData } from '../data.js';
 import { countScore, initQuestionPage } from './questionPage.js';
 
