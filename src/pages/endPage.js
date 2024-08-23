@@ -36,7 +36,7 @@ export const initEndPage = () => {
       question.selected = null;
     });
 
-   initWelcomePage();
+    initWelcomePage();
   };
 
   document
