@@ -14,3 +14,6 @@ export const TIMER_ID = 'timer';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const INPUT_NAME_ID = 'welcome-page-name-input';
 export const RESTART_BUTTON = 'restart-button';
+export const SPEED_SLIDER_ID = 'speed-slider';
+export const SPEED_SLIDER_CONTAINER_ID = 'speed-slider-container';
+export const SPEED_VIEW = 'speed-view';

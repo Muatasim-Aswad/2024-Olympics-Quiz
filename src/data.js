@@ -11,6 +11,14 @@
 
 export const quizData = {
   playerName: '',
+  _speed: 6,
+  set speed(speed) {
+    if (typeof speed === 'number' && speed > 0 && speed < 13)
+      this._speed = speed;
+  },
+  get speed() {
+    return this._speed;
+  },
   currentQuestionIndex: 0,
   // the questions in the quiz
   questions: [
