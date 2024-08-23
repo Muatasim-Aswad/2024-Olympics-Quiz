@@ -22,12 +22,11 @@ export const createWelcomeElement = () => {
   }, 0);
 
   startButton.addEventListener('click', () => {
-    const playerName = inputElement.value;
-    quizData.playerName = playerName;
+    quizData.playerName = inputElement.value;
   });
 
   inputElement.addEventListener('keyup', (event) => {
-    if (event.code === 'Enter') {
+    if (event.key === 'Enter') {
       startButton.click();
     }
   });
