@@ -13,18 +13,23 @@ export const createWelcomeElement = () => {
     <input id="${INPUT_NAME_ID}" type="text"  name="name" placeholder="Enter your name" required>
     <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
   `;
-
+  
+  const inputElement = element.querySelector(`#${INPUT_NAME_ID}`);
   const startButton = element.querySelector(`#${START_QUIZ_BUTTON_ID}`);
+
+  setTimeout(() => {
+    inputElement.focus();
+  }, 0);
+
   startButton.addEventListener('click', () => {
-    const playerName = element.querySelector(`#${INPUT_NAME_ID}`).value;
+    const playerName = inputElement.value;
     quizData.playerName = playerName;
   });
-  element
-    .querySelector(`#${INPUT_NAME_ID}`)
-    .addEventListener('keyup', (event) => {
-      if (event.code === 'Enter') {
-        startButton.click();
-      }
-    });
+  
+   inputElement.addEventListener('keyup', (event) => {
+    if (event.code === 'Enter') {
+      startButton.click();
+    }
+  });
   return element;
 };

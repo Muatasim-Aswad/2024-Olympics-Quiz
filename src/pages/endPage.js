@@ -1,10 +1,7 @@
 import { createEndScreen } from '../views/endView.js';
-import { USER_INTERFACE_ID } from '../constants.js';
-import { START_QUIZ_BUTTON_ID } from '../constants.js';
+import { USER_INTERFACE_ID, RESTART_BUTTON, START_QUIZ_BUTTON_ID  } from '../constants.js';
 import { quizData } from '../data.js';
-import { countScore } from './questionPage.js';
-import { initQuestionPage } from './questionPage.js';
-import { RESTART_BUTTON } from '../constants.js';
+import { countScore, initQuestionPage } from './questionPage.js';
 
 export const initEndPage = () => {
   const userInterface = document.getElementById(`${USER_INTERFACE_ID}`);
