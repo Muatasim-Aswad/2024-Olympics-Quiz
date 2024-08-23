@@ -8,8 +8,9 @@ import { createAnswerElement } from '../views/answerView.js';
 import { createScoreElement } from '../views/scoreView.js';
 import { createRemainingElement } from '../views/remainingQuestionsView.js';
 import { createTimerElement } from '../views/timerView.js';
-import { quizData } from '../data.js';
+import { quizData, updateHighScores } from '../data.js';
 import { initEndPage } from './endPage.js';
+import { storageLocal } from '../storage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -81,7 +82,8 @@ const nextQuestion = () => {
   if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
     // load end page  after one and a half seconds
     const [, score] = countScore();
-    quizData.updateHighScores(score);
+    const updatedScores = updateHighScores(score, storageLocal.highScores);
+    storageLocal.highScores = updatedScores;
 
     setTimeout(initEndPage, 1500);
   } else {

@@ -17,4 +17,4 @@ export const RESTART_BUTTON = 'restart-button';
 export const HIGH_SCORE_ID = 'high-score';
 
 //storage
-export const HIGH_SCORES = 'highScores';
+export const LOCAL_STORAGE_HIGH_SCORES = 'highScores';
