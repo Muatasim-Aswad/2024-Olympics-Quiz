@@ -111,7 +111,7 @@ export const countScore = () => {
   let correct = 0;
 
   quizData.questions.forEach((question) => {
-      if (question.selected === question.correct) correct++;
+    if (question.selected === question.correct) correct++;
   });
 
   return [completedQuestions, correct];
@@ -124,7 +124,6 @@ const timer = (seconds, timerElement) => {
     seconds--; //count down
     timerElement.innerText = formatter(seconds); //update view
 
-  
     if (seconds === 0) {
       nextQuestion();
     }
