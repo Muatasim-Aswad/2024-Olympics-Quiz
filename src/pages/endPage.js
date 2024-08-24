@@ -11,38 +11,42 @@ export const initEndPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const scoreView = countScore();
-  const totalScore = scoreView[1]; // the index based on countScore function return value
+  const [, totalScore] = countScore();
+  const [text, gifSrc] = getFeedback(totalScore);
 
-  let gifSrc = '';
-  if (totalScore <= 4) {
-    gifSrc = '../public/img/fail-run.gif';
-  } else if (totalScore >= 5 && totalScore <= 9) {
-    gifSrc = '../public/img/almost-there.gif';
-  } else if (totalScore === 10) {
-    gifSrc = '../public/img/medals-show-off.gif';
-  }
-
-  const endPageElement = createEndScreen(
-    quizData.playerName,
-    totalScore,
-    gifSrc
-  );
-  userInterface.appendChild(endPageElement);
+  userInterface.appendChild(createEndScreen(totalScore, text, gifSrc));
 
   userInterface.appendChild(createHighScoreElement(quizData.highestScore));
-
-  const restartQuiz = () => {
-    quizData.currentQuestionIndex = 0;
-
-    quizData.questions.forEach((question) => {
-      question.selected = null;
-    });
-
-    initWelcomePage();
-  };
 
   document
     .getElementById(RESTART_BUTTON)
     .addEventListener('click', restartQuiz);
+};
+
+const getFeedback = (totalScore) => {
+  const textFeedback =
+    totalScore < 5
+      ? `You can do better ${quizData.playerName}. Try again and beat your score!`
+      : totalScore < 10
+      ? `Good job ${quizData.playerName}! You scored well. Keep pushing for that high score!`
+      : `Congratulations ${quizData.playerName}! You're a true champion!`;
+
+  const gifFeedbackSrc =
+    totalScore < 5
+      ? '../public/img/fail-run.gif'
+      : totalScore < 10
+      ? '../public/img/almost-there.gif'
+      : '../public/img/medals-show-off.gif';
+
+  return [textFeedback, gifFeedbackSrc];
+};
+
+const restartQuiz = () => {
+  quizData.currentQuestionIndex = 0;
+
+  quizData.questions.forEach((question) => {
+    question.selected = null;
+  });
+
+  initWelcomePage();
 };
