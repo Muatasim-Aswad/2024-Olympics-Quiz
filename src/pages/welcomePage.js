@@ -17,7 +17,7 @@ export const initWelcomePage = () => {
   const selector = document.getElementById(DIFFICULTY_SELECTOR_ID);
 
   selector.addEventListener('input', () => {
-    quizData.difficulty = +selector.value; //+ for string to number
+    quizData.difficulty = Number(selector.value);
   });
 
   //start
