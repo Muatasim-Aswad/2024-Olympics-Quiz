@@ -26,11 +26,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }
 
 h2 {
@@ -134,7 +129,6 @@ li {
 }
 
 #next-question-button {
-  background-color: rgb(226, 224, 202);
   width: 9rem;
   padding: 0.8rem;
   font-size: 0.9rem;
