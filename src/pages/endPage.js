@@ -3,7 +3,8 @@ import { USER_INTERFACE_ID, RESTART_BUTTON } from '../constants.js';
 import { quizData } from '../data.js';
 
 import { createHighScoreElement } from '../views/highScoreView.js';
-import { countScore, initQuestionPage } from './questionPage.js';
+import { countScore } from './questionPage.js';
+import { initWelcomePage } from './welcomePage.js';
 
 export const initEndPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -37,7 +38,7 @@ export const initEndPage = () => {
       question.selected = null;
     });
 
-    initQuestionPage();
+    initWelcomePage();
   };
 
   document
