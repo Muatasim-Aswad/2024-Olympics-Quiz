@@ -10,6 +10,7 @@
 */
 
 export const quizData = {
+  highestScore: 0,
   playerName: '',
   currentQuestionIndex: 0,
   // the questions in the quiz
