@@ -113,6 +113,9 @@ const handleAnswer = (
   clickedButton.classList.add(styling);
 
   if (!result) correctAnswerButton.classList.add('correct-answer');
+  //stop timer and audio
+  clearInterval(timerInterval);
+  document.getElementById(TIMER_AUDIO).pause();
 };
 
 export const countScore = () => {
