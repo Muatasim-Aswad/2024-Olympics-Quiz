@@ -217,7 +217,7 @@ li {
   border-radius: 15px;
   border-style: hidden;
 }
-#restart-button:hover{
+#restart-button:hover {
   background-color: #bb8db9c7;
   border: solid white 3px;
 }
