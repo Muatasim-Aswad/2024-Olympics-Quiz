@@ -63,7 +63,8 @@ export const initQuestionPage = () => {
   playAudio();
 
   //timer
-  const seconds = 120;
+
+  const seconds = 60 / quizData.difficulty;
   const timerElement = createTimerElement(formatter(seconds));
   userInterface.appendChild(timerElement);
   timer(seconds, timerElement);

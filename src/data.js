@@ -12,6 +12,7 @@
 export const quizData = {
   highestScore: 0,
   playerName: '',
+  difficulty: 1,
   currentQuestionIndex: 0,
   // the questions in the quiz
   questions: [
