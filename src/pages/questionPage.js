@@ -24,7 +24,6 @@ export const initQuestionPage = () => {
   const questionTextWithNumber = `${questionNumber}. ${currentQuestion.text}`;
 
   const questionElement = createQuestionElement(questionTextWithNumber);
-
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -64,7 +63,7 @@ export const initQuestionPage = () => {
   playAudio();
 
   //timer
-  const seconds = 5;
+  const seconds = 120;
   const timerElement = createTimerElement(formatter(seconds));
   userInterface.appendChild(timerElement);
   timer(seconds, timerElement);
@@ -95,8 +94,7 @@ const nextQuestion = () => {
     setTimeout(initEndPage, 1500);
   } else {
     // If it's not the last question, move to the next question immediately
-    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+    quizData.currentQuestionIndex += 1;
     initQuestionPage();
   }
 };
@@ -125,9 +123,7 @@ export const countScore = () => {
   let correct = 0;
 
   quizData.questions.forEach((question) => {
-    if (question.selected) {
-      if (question.selected === question.correct) correct++;
-    }
+    if (question.selected === question.correct) correct++;
   });
 
   return [completedQuestions, correct];
@@ -135,15 +131,12 @@ export const countScore = () => {
 
 let timerInterval;
 const timer = (seconds, timerElement) => {
-  let finished;
-
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     seconds--; //count down
     timerElement.innerText = formatter(seconds); //update view
 
-    finished = seconds === 0; //end
-    if (finished) {
+    if (seconds === 0) {
       nextQuestion();
     }
   }, 1000);
