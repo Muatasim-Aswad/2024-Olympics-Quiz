@@ -2,7 +2,7 @@ import {
   ANSWERS_LIST_ID,
   TIMER_AUDIO,
   NEXT_QUESTION_BUTTON_ID,
-} from '../constants.js';
+} from '../../constants.js';
 
 /**
  * Create a full question element

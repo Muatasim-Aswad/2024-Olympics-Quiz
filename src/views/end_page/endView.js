@@ -1,4 +1,4 @@
-import { RESTART_BUTTON } from '../constants.js';
+import { RESTART_BUTTON } from '../../constants.js';
 
 export const createEndScreen = (playerName, totalScore, gifs) => {
   const element = document.createElement('div');

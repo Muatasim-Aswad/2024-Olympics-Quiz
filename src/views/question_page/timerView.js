@@ -1,14 +1,14 @@
-import { SCORE_ID } from '../constants.js';
+import { TIMER_ID } from '../../constants.js';
 /**
  * Create an Answer element
  * @returns {Element}
  */
-export const createScoreElement = (solved = 0, correct = 0) => {
+export const createTimerElement = (initialValue) => {
   const element = document.createElement('p');
-  element.id = SCORE_ID;
+  element.id = TIMER_ID;
 
   element.innerHTML = String.raw`
-    Score: ${correct}/${solved}
+    ${initialValue}
   `;
 
   return element;

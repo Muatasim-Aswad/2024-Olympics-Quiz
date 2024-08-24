@@ -1,10 +1,11 @@
-import { createEndScreen } from '../views/endView.js';
-import { USER_INTERFACE_ID, RESTART_BUTTON } from '../constants.js';
-import { quizData } from '../data.js';
+import { createEndScreen } from '../views/end_page/endView.js';
+import { createHighScoreElement } from '../views/end_page/highScoreView.js';
 
-import { createHighScoreElement } from '../views/highScoreView.js';
 import { countScore } from './questionPage.js';
 import { initWelcomePage } from './welcomePage.js';
+
+import { quizData } from '../data.js';
+import { USER_INTERFACE_ID, RESTART_BUTTON } from '../constants.js';
 
 export const initEndPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);

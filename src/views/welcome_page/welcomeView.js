@@ -1,5 +1,5 @@
-import { START_QUIZ_BUTTON_ID, INPUT_NAME_ID } from '../constants.js';
-import { quizData } from '../data.js';
+import { START_QUIZ_BUTTON_ID, INPUT_NAME_ID } from '../../constants.js';
+import { quizData } from '../../data.js';
 
 /**
  * Create the welcome screen

@@ -1,4 +1,4 @@
-import { REMAINING_QUESTIONS_ID } from '../constants.js';
+import { REMAINING_QUESTIONS_ID } from '../../constants.js';
 /**
  * Create an Answer element
  * @returns {Element}

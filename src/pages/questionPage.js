@@ -1,16 +1,20 @@
 import {
+  createQuestionElement,
+  createAnswerElement,
+  createScoreElement,
+  createRemainingElement,
+  createTimerElement,
+} from '../views/question_page/index.js';
+
+import { initEndPage } from './endPage.js';
+
+import { quizData } from '../data.js';
+import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   TIMER_AUDIO,
   USER_INTERFACE_ID,
 } from '../constants.js';
-import { createQuestionElement } from '../views/questionView.js';
-import { createAnswerElement } from '../views/answerView.js';
-import { createScoreElement } from '../views/scoreView.js';
-import { createRemainingElement } from '../views/remainingQuestionsView.js';
-import { createTimerElement } from '../views/timerView.js';
-import { quizData } from '../data.js';
-import { initEndPage } from './endPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
