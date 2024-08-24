@@ -15,3 +15,4 @@ export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const INPUT_NAME_ID = 'welcome-page-name-input';
 export const RESTART_BUTTON = 'restart-button';
 export const HIGH_SCORE_ID = 'high-score';
+export const TIMER_AUDIO = 'timer-audio';

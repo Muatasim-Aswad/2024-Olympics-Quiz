@@ -1,28 +1,29 @@
-import { RESTART_BUTTON, START_QUIZ_BUTTON_ID } from '../constants.js';
+import { RESTART_BUTTON } from '../constants.js';
 
 export const createEndScreen = (playerName, totalScore, gifs) => {
   const element = document.createElement('div');
   element.id = 'scoreFeedback';
 
+  let feedbackText;
   if (totalScore <= 4) {
-    element.innerHTML = `<p id = 'scoreView'>Your total score: ${totalScore}/10 </p>
-    <h2 id= 'feedbackText'> You can do better ${playerName}. Try again and beat your score!</h2>
-    <img id='gif' src='${gifs}'>`;
+    feedbackText = `You can do better ${playerName}. Try again and beat your score!`;
   } else if (totalScore >= 5 && totalScore <= 9) {
-    element.innerHTML = `<p id = 'scoreView'>Your total score: ${totalScore}/10 </p>
-    <h2 id= 'feedbackText'>Good job ${playerName}! You scored well. Keep pushing for that high score!</h2>
-    <img id='gif' src='${gifs}'>`;
+    feedbackText = `Good job ${playerName}! You scored well. Keep pushing for that high score!`;
   } else if (totalScore >= 10) {
-    element.innerHTML = `<p id = 'scoreView'>Your total score: ${totalScore}/10 </p>
-    <h2 id= 'feedbackText'>Congratulations ${playerName}! You're a true champion!</h2>
-    <img id='gif' src='${gifs}'>`;
+    feedbackText = `Congratulations ${playerName}! You're a true champion!`;
   }
 
-  const RestartButton = document.createElement('button');
+  element.innerHTML = `
+    <p id='scoreView'>Your total score: ${totalScore}/10</p>
+    <h2 id='feedbackText'>${feedbackText}</h2>
+    <img id='gif' src='${gifs}'>
+  `;
+
+  const restartButton = document.createElement('button');
   //RestartButton.id = `${START_QUIZ_BUTTON_ID}`;
-  RestartButton.id = `${RESTART_BUTTON}`;
-  RestartButton.textContent = 'Restart quiz';
-  element.appendChild(RestartButton);
+  restartButton.id = `${RESTART_BUTTON}`;
+  restartButton.textContent = 'Restart quiz';
+  element.appendChild(restartButton);
 
   return element;
 };

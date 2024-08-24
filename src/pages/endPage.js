@@ -1,20 +1,18 @@
 import { createEndScreen } from '../views/endView.js';
-import { USER_INTERFACE_ID } from '../constants.js';
-import { START_QUIZ_BUTTON_ID } from '../constants.js';
+import { USER_INTERFACE_ID, RESTART_BUTTON } from '../constants.js';
 import { quizData } from '../data.js';
-import { countScore } from './questionPage.js';
-import { initQuestionPage } from './questionPage.js';
+
 import { RESTART_BUTTON } from '../constants.js';
 import { createHighScoreElement } from '../views/highScoreView.js';
+import { countScore, initQuestionPage } from './questionPage.js';
 
 export const initEndPage = () => {
-  const userInterface = document.getElementById(`${USER_INTERFACE_ID}`);
+  const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
   const scoreView = countScore();
   const totalScore = scoreView[1]; // the index based on countScore function return value
 
-  const gifElement = document.getElementById('gif');
   let gifSrc = '';
   if (totalScore <= 4) {
     gifSrc = '../public/img/fail-run.gif';
@@ -44,6 +42,6 @@ export const initEndPage = () => {
   };
 
   document
-    .getElementById(`${RESTART_BUTTON}`)
+    .getElementById(RESTART_BUTTON)
     .addEventListener('click', restartQuiz);
 };
