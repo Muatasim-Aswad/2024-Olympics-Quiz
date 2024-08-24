@@ -10,6 +10,7 @@
 */
 
 export const quizData = {
+  highestScore: 0,
   playerName: '',
   currentQuestionIndex: 0,
   // the questions in the quiz
@@ -185,15 +186,4 @@ export const quizData = {
       ],
     },
   ],
-};
-
-export const updateHighScores = (score = 0, scoresArray = []) => {
-  const scores = [...scoresArray]; //copy
-  scores.push(score); //add new score
-  scores.sort((a, b) => b - a); //re-sort descending
-
-  const maxScores = 3; //define how many scores you want to store
-  if (scores.length > maxScores) scores.length = maxScores; //trim the list
-
-  return scores; //return
 };
