@@ -51,17 +51,6 @@ export const initQuestionPage = () => {
     );
   });
 
-  // timer audio
-  const timerSoundEffect = document.getElementById(`${TIMER_AUDIO}`);
-  timerSoundEffect.src = '../public/audio/ticking-sound.mp3';
-
-  const playAudio = () => {
-    timerSoundEffect.currentTime = 0; // Reset to start
-    timerSoundEffect.play();
-  };
-
-  playAudio();
-
   //timer
   const seconds = 120;
   const timerElement = createTimerElement(formatter(seconds));
@@ -130,11 +119,25 @@ export const countScore = () => {
 };
 
 let timerInterval;
+let audioPlay = false;
 const timer = (seconds, timerElement) => {
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     seconds--; //count down
     timerElement.innerText = formatter(seconds); //update view
+
+      const playAudio = () => {
+        // timer audio
+        const timerSoundEffect = document.getElementById(`${TIMER_AUDIO}`);
+        timerSoundEffect.src = '../public/audio/ticking-sound.mp3';
+        timerSoundEffect.currentTime = 0; // Reset to start
+        timerSoundEffect.play();
+     };
+
+      if (seconds === 5 && !audioPlay){
+        playAudio();
+        audioPlay = true;
+      }
 
     if (seconds === 0) {
       nextQuestion();
