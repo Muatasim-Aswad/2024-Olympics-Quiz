@@ -80,9 +80,6 @@ const nextQuestion = () => {
 
   if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {
     // load end page  after one and a half seconds
-    const [, newScore] = countScore();
-    if (newScore > quizData.highestScore) quizData.highestScore = newScore;
-
     setTimeout(initEndPage, 1500);
   } else {
     // If it's not the last question, move to the next question immediately
@@ -121,25 +118,27 @@ export const countScore = () => {
   return [completedQuestions, correct];
 };
 
+const playAudio = () => {
+  // timer audio
+  const timerSoundEffect = document.getElementById(`${TIMER_AUDIO}`);
+  timerSoundEffect.src = '../public/audio/ticking-sound.mp3';
+  timerSoundEffect.currentTime = 0; // Reset to start
+  timerSoundEffect.play();
+  if (timerSoundEffect.paused) {
+    timerSoundEffect.play();
+  }
+};
+
 let timerInterval;
-let audioPlay = false;
+
 const timer = (seconds, timerElement) => {
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     seconds--; //count down
     timerElement.innerText = formatter(seconds); //update view
 
-    const playAudio = () => {
-      // timer audio
-      const timerSoundEffect = document.getElementById(`${TIMER_AUDIO}`);
-      timerSoundEffect.src = '../public/audio/ticking-sound.mp3';
-      timerSoundEffect.currentTime = 0; // Reset to start
-      timerSoundEffect.play();
-    };
-
-    if (seconds === 5 && !audioPlay) {
+    if (seconds === 5) {
       playAudio();
-      audioPlay = true;
     }
 
     if (seconds === 0) {
