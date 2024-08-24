@@ -8,6 +8,7 @@ import {
   USER_INTERFACE_ID,
   START_QUIZ_BUTTON_ID,
   DIFFICULTY_SELECTOR_ID,
+  INPUT_NAME_ID,
 } from '../constants.js';
 
 export const initWelcomePage = () => {
@@ -25,8 +26,22 @@ export const initWelcomePage = () => {
     quizData.difficulty = Number(selector.value);
   });
 
-  //start
-  document
-    .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', initQuestionPage);
+  //inputElement: get player name
+  const inputElement = document.getElementById(INPUT_NAME_ID);
+  const startButton = document.getElementById(START_QUIZ_BUTTON_ID);
+
+  setTimeout(() => {
+    inputElement.focus();
+  }, 0);
+
+  inputElement.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      startButton.click();
+    }
+  });
+
+  startButton.addEventListener('click', () => {
+    quizData.playerName = inputElement.value;
+    initQuestionPage();
+  });
 };
