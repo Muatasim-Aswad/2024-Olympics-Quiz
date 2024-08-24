@@ -126,18 +126,18 @@ const timer = (seconds, timerElement) => {
     seconds--; //count down
     timerElement.innerText = formatter(seconds); //update view
 
-      const playAudio = () => {
-        // timer audio
-        const timerSoundEffect = document.getElementById(`${TIMER_AUDIO}`);
-        timerSoundEffect.src = '../public/audio/ticking-sound.mp3';
-        timerSoundEffect.currentTime = 0; // Reset to start
-        timerSoundEffect.play();
-     };
+    const playAudio = () => {
+      // timer audio
+      const timerSoundEffect = document.getElementById(`${TIMER_AUDIO}`);
+      timerSoundEffect.src = '../public/audio/ticking-sound.mp3';
+      timerSoundEffect.currentTime = 0; // Reset to start
+      timerSoundEffect.play();
+    };
 
-      if (seconds === 5 && !audioPlay){
-        playAudio();
-        audioPlay = true;
-      }
+    if (seconds === 5 && !audioPlay) {
+      playAudio();
+      audioPlay = true;
+    }
 
     if (seconds === 0) {
       nextQuestion();
