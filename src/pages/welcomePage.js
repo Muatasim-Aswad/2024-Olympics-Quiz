@@ -1,10 +1,9 @@
 import { USER_INTERFACE_ID, START_QUIZ_BUTTON_ID } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
-import { createSpeedElement } from '../views/speedSliderView.js';
+import { createDifficultySelectorElement } from '../views/difficultySelectorView.js';
 import { quizData } from '../data.js';
-import { SPEED_SLIDER_ID } from '../constants.js';
-import { SPEED_VIEW } from '../constants.js';
+import { DIFFICULTY_SELECTOR_ID } from '../constants.js';
 
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -13,14 +12,12 @@ export const initWelcomePage = () => {
   const welcomeElement = createWelcomeElement();
   userInterface.appendChild(welcomeElement);
 
-  //speed slider
-  const speedElement = createSpeedElement(quizData.speed);
-  userInterface.appendChild(speedElement);
-  const slider = document.getElementById(SPEED_SLIDER_ID);
+  //difficulty selector
+  userInterface.appendChild(createDifficultySelectorElement());
+  const selector = document.getElementById(DIFFICULTY_SELECTOR_ID);
 
-  slider.addEventListener('input', () => {
-    quizData.speed = +slider.value;
-    document.getElementById(SPEED_VIEW).innerText = `x${quizData.speed}`;
+  selector.addEventListener('input', () => {
+    quizData.difficulty = +selector.value; //+ for string to number
   });
 
   //start
