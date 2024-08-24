@@ -50,6 +50,10 @@ h1 {
   font-size: 1.2rem;
 }
 
+#difficulty-selector-container{
+  margin-top: 6px;
+}
+
 #user-interface {
   background-color: rgba(191, 175, 57, 0.766);
   width: 70%;
