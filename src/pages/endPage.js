@@ -2,7 +2,6 @@ import { createEndScreen } from '../views/endView.js';
 import { USER_INTERFACE_ID, RESTART_BUTTON } from '../constants.js';
 import { quizData } from '../data.js';
 
-import { RESTART_BUTTON } from '../constants.js';
 import { createHighScoreElement } from '../views/highScoreView.js';
 import { countScore, initQuestionPage } from './questionPage.js';
 
