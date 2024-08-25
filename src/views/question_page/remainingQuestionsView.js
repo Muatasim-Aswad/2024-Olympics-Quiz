@@ -1,6 +1,6 @@
 import { REMAINING_QUESTIONS_ID } from '../../constants.js';
 /**
- * Create an Answer element
+ * Create a remaining questions element
  * @returns {Element}
  */
 export const createRemainingElement = (remainingQuestions = 0) => {

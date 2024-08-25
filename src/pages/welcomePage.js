@@ -15,8 +15,7 @@ export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const welcomeElement = createWelcomeElement();
-  userInterface.appendChild(welcomeElement);
+  userInterface.appendChild(createWelcomeElement());
 
   //difficulty selector
   userInterface.appendChild(createDifficultySelectorElement());
@@ -26,7 +25,7 @@ export const initWelcomePage = () => {
     quizData.difficulty = Number(selector.value);
   });
 
-  //inputElement: get player name
+  //get player name and start quiz by Enter key or button
   const inputElement = document.getElementById(INPUT_NAME_ID);
   const startButton = document.getElementById(START_QUIZ_BUTTON_ID);
 

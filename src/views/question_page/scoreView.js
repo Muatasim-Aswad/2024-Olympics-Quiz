@@ -1,6 +1,6 @@
 import { SCORE_ID } from '../../constants.js';
 /**
- * Create an Answer element
+ * Create a score element
  * @returns {Element}
  */
 export const createScoreElement = (solved = 0, correct = 0) => {

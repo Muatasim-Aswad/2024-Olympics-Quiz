@@ -11,11 +11,10 @@ export const initEndPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const [, totalScore] = countScore();
+  const [totalScore] = countScore();
   const [text, gifSrc] = getFeedback(totalScore);
 
   userInterface.appendChild(createEndScreen(totalScore, text, gifSrc));
-
   userInterface.appendChild(createHighScoreElement(quizData.highestScore));
 
   document
