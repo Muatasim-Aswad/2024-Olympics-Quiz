@@ -1,4 +1,4 @@
-import { HIGH_SCORE_ID } from '../constants.js';
+import { HIGH_SCORE_ID } from '../../constants.js';
 /**
  * Create an Answer element
  * @returns {Element}

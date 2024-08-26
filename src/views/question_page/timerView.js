@@ -1,6 +1,6 @@
-import { TIMER_ID } from '../constants.js';
+import { TIMER_ID } from '../../constants.js';
 /**
- * Create an Answer element
+ * Create a Timer element
  * @returns {Element}
  */
 export const createTimerElement = (initialValue) => {

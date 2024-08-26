@@ -1,7 +1,7 @@
 import {
   DIFFICULTY_SELECTOR_CONTAINER_ID,
   DIFFICULTY_SELECTOR_ID,
-} from '../constants.js';
+} from '../../constants.js';
 /**
  * Create an Answer element
  * @returns {Element}
