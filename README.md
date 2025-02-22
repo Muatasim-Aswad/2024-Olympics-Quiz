@@ -1,8 +1,16 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7c0fd6c8-ee1d-470d-9737-a368713875d1/deploy-status)](https://app.netlify.com/sites/olympics-quiz/deploys)
+![GitHub license](https://img.shields.io/github/license/Muatasim-Aswad/2024-Olympics-Quiz)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![CSS3](https://img.shields.io/badge/CSS3-blue)
+
 # 2024 Olympics Quiz
 
 2024 Olympics Quiz - Single Page Application
 
 An engaging and interactive SPA that tests your knowledge of the 2024 Olympics in a fun and intuitive way. Try it out and challenge yourself! 🏅🏆🎯
+
+
+🔗 **Live Demo:** [Olympics Quiz Web App](https://olympics-quiz.netlify.app/)
 
 ## Tech Stack & Tools
 
