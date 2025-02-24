@@ -2,6 +2,8 @@
 ![GitHub license](https://img.shields.io/github/license/Muatasim-Aswad/2024-Olympics-Quiz)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![CSS3](https://img.shields.io/badge/CSS3-blue)
+![HTML5](https://img.shields.io/badge/HTML5-orange)
+
 
 # 2024 Olympics Quiz
 
