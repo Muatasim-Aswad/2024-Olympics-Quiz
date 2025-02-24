@@ -1,8 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7c0fd6c8-ee1d-470d-9737-a368713875d1/deploy-status)](https://app.netlify.com/sites/olympics-quiz/deploys)
 ![GitHub license](https://img.shields.io/github/license/Muatasim-Aswad/2024-Olympics-Quiz)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![CSS3](https://img.shields.io/badge/CSS3-blue)
-![HTML5](https://img.shields.io/badge/HTML5-orange)
+![CSS3](https://img.shields.io/badge/CSS-3-blue)
+![HTML5](https://img.shields.io/badge/HTML-5-orange)
 
 
 # 2024 Olympics Quiz
